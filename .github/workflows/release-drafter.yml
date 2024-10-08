@@ -1,0 +1,24 @@
+name: Generate Changelog
+
+# Trigger the action when tags are pushed and pull requests are opened/closed
+on:
+  push:
+    tags:
+      - 'v*'  # Trigger on version tags
+  pull_request:
+    types: [opened, reopened, closed]  # Trigger on PR events
+
+jobs:
+  update_release_drafter:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Run Release Drafter to generate the changelog
+      - name: Run Release Drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: .github/release-drafter.yml
