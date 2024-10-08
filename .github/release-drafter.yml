@@ -1,12 +1,5 @@
-name-template: 'v$NEXT_PATCH_VERSION'
-tag-template: 'v$NEXT_PATCH_VERSION'
-categories:
-  - title: '🚀 Features'
-    label: 'feature'
-  - title: '🐛 Bug Fixes'
-    label: 'bug'
-change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
-version-resolver: increase-minor
+name: Release Drafter
+
 template: |
   ## 🚀 New Features
   ${FEATURES}
@@ -16,3 +9,11 @@ template: |
 
   ## 📦 Other Changes
   ${OTHER_CHANGES}
+
+categories:
+  - title: "Features"
+    label: "feature"
+  - title: "Bug Fixes"
+    label: "bug"
+  - title: "Other Changes"
+    label: ""
