@@ -1,5 +1,4 @@
-name: Release Drafter
-
+# .github/release-drafter.yml
 template: |
   ## 🚀 New Features
   ${FEATURES}
@@ -10,10 +9,21 @@ template: |
   ## 📦 Other Changes
   ${OTHER_CHANGES}
 
+change-template: |
+  - ${title} (#${number})
+
 categories:
-  - title: "Features"
-    label: "feature"
+  - title: "New Features"
+    labels:
+      - "enhancement"
+      - "feature"
+
   - title: "Bug Fixes"
-    label: "bug"
+    labels:
+      - "bug"
+      - "fix"
+
   - title: "Other Changes"
-    label: ""
+    labels:
+      - "documentation"
+      - "chore"
